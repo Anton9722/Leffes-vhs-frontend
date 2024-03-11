@@ -1,0 +1,72 @@
+body {
+    background-image: url("images/background.jpg");
+    background-size: cover;
+    margin: 0;
+    font-family: "Inter", sans-serif;
+}
+
+#header {
+    background-color: rgba(34, 19, 19, 0.87);
+    display: flex;
+    align-items: center;
+    margin-top: 0%;
+    font-family: "Times New Roman", sans-serif;
+    
+}
+
+#header2 {
+    background-color: rgba(34, 19, 19, 0.87);
+    display: flex;
+    border-bottom-right-radius: 30px;
+    border-bottom-left-radius: 30px;
+}
+
+#headerTitle{
+    margin-left: 40px;
+    margin-right: 250px;
+    color: rgba(254, 254, 254, 1);
+    text-shadow: 3px 3px 3px #C04B1B;
+}
+
+#headerUl {
+    display: flex;
+    list-style: none;
+    justify-content: space-between;
+    width: 40%;
+}
+
+#searchInput{
+    background-color: white;
+    background-image: url('searchicon.png');
+    background-position: 10px 10px;
+    background-repeat: no-repeat;
+    padding-left: 30px;
+    height: 35px;
+    width: 400px;
+    margin-right: 200px;
+    border-radius: 20px;
+}
+
+.headerBtn{
+    margin-right: 20px;
+}
+
+#heroSection h1, #heroSection h2{
+    color: rgb(220, 220, 220);
+    text-shadow: 3px 3px 3px black;
+    font-family: "Roboto", sans-serif;
+}
+
+#popularMovies{
+    background-color: rgba(219, 219, 219, 0.65);
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+}
+
+.header2Li{
+    color: rgb(220, 220, 220);
+    text-shadow: 3px 3px 3px black;
+}
