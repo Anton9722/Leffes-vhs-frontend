@@ -60,10 +60,6 @@ body {
 
 }
 
-.headerBtn :hover {
-    font-size: 2rem;
-}
-
 #heroSection h1,
 #heroSection h2 {
     color: rgb(220, 220, 220);
@@ -85,4 +81,64 @@ body {
 .header2Li {
     color: rgb(220, 220, 220);
     text-shadow: 3px 3px 3px black;
+}
+
+#uniqueProduct {
+    background-color: rgba(219, 219, 219, 0.65);
+    position: absolute;
+    top: 40%;
+    text-indent: 40px;
+    display: flex;
+    padding: 40px;
+    margin: 0px;
+    border-bottom-right-radius: 30px;
+    border-top-right-radius: 30px;
+
+}
+
+#uniqueProductPicture {
+    width: 40%;
+    height: 40%;
+
+}
+
+#productInformation {
+    text-align: center;
+
+}
+
+#productName {
+    margin: 0px;
+    padding-left: 40px;
+}
+
+#productGenre {
+    margin: 0px;
+    padding-left: 80px;
+    font-size: 80%;
+    font-weight: bold;
+    opacity: 50%;
+    text-align: left;
+}
+
+#productDescription {
+
+    padding-left: 40px;
+    margin-top: 40px;
+    max-width: 250px;
+    text-align: left;
+
+}
+
+#productPrice {
+
+    margin-top: 30px;
+    text-align: center;
+    margin-bottom: 0px;
+
+}
+
+#addToCartBtn {
+    margin-left: 40px;
+
 }
