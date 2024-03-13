@@ -1,13 +1,49 @@
 #searchResult{
+    
     background-color: rgba(219, 219, 219, 0.65) ;
     width: 90%;
     margin: auto;
+    
     margin-top: 30px;
     padding: 20px 40px;
     border-radius: 30px;
+
 }
 
 #searchResult h2, #searchResult h1{
     padding: 0%;
     margin: 0%;
+}
+
+.product{
+    display: inline-block;
+    vertical-align: top;
+    width: 180px;
+    height: 300px;
+    background-color: rgba(219, 219, 219, 0.685);
+    border-radius: 10px;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.233);
+    margin: 30px;
+    position: relative;
+    padding-left: 30px;
+    
+    
+}
+.product-title{
+    height: 40px;
+}
+.product-price{
+    font-weight: bold;
+    position: absolute;
+    bottom: 0;
+    padding-left: 40px;
+}
+.product-category{
+    font-size: small
+}
+.product-image{
+    
+    width: 140px;
+    height: 140px;
+    border-radius: 10px;
 }

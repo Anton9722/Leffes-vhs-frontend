@@ -40,7 +40,29 @@ function presentResult(produkts){
     for (let i in produkts) {
         console.log(produkts[i]);
         let li = document.createElement("li");
-        li.innerHTML = produkts[i].name;
+        let title = document.createElement("h3");
+       // let description = document.createElement("p");
+        let categorys = document.createElement("p");
+        let price = document.createElement("p");
+        let img = document.createElement("img");
+
+        title.innerText = produkts[i].name;
+       // description.innerText = produkts[i].description;
+        categorys.innerText = produkts[i].category;
+        price.innerText = produkts[i].price+" kr";
+        img.src = produkts[i].imageUrl;
+
+        li.setAttribute("class", "product");
+        title.setAttribute("class", "product-title");
+       // description.setAttribute("class", "product-description");
+        categorys.setAttribute("class", "product-category");
+        price.setAttribute("class", "product-price");
+        img.setAttribute("class", "product-image");
+
+
+
+
+        li.append(title,img, categorys, price);
         result.appendChild(li);
         
     }
