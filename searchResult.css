@@ -1,0 +1,13 @@
+#searchResult{
+    background-color: rgba(219, 219, 219, 0.65) ;
+    width: 90%;
+    margin: auto;
+    margin-top: 30px;
+    padding: 20px 40px;
+    border-radius: 30px;
+}
+
+#searchResult h2, #searchResult h1{
+    padding: 0%;
+    margin: 0%;
+}
