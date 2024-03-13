@@ -28,9 +28,16 @@
     padding-left: 30px;
     
     
+    
 }
 .product-title{
-    height: 40px;
+    width: 80%;
+    height: 45px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+
 }
 .product-price{
     font-weight: bold;
@@ -39,7 +46,12 @@
     padding-left: 40px;
 }
 .product-category{
-    font-size: small
+    font-size: small;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+
 }
 .product-image{
     

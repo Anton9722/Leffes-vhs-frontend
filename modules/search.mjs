@@ -16,15 +16,17 @@ export function search(input,apiKey) {
                 let errMessage = document.createElement("li")
                 errMessage.innerText = "Inget resultat";
                 fp.appendChild(errMessage);
-    
-
+                
+                
             }))
-            .then(data => {
+            .then(data => {         
                 if (!data.length == 0) {
+                    if (window.location.href !== "http://localhost:5500/searchResult.html") {
+                        window.location.href = "http://localhost:5500/searchResult.html";
+                    }
                     presentResult(data);
-                }
-                    
 
+                }
             })
             input.value = '';
         }
@@ -35,26 +37,25 @@ export function search(input,apiKey) {
 }
 
 function presentResult(produkts){
+    
     let result = document.getElementById("foundProducts")
     result.innerHTML = '';
     for (let i in produkts) {
         console.log(produkts[i]);
         let li = document.createElement("li");
         let title = document.createElement("h3");
-       // let description = document.createElement("p");
         let categorys = document.createElement("p");
         let price = document.createElement("p");
         let img = document.createElement("img");
 
         title.innerText = produkts[i].name;
-       // description.innerText = produkts[i].description;
         categorys.innerText = produkts[i].category;
         price.innerText = produkts[i].price+" kr";
         img.src = produkts[i].imageUrl;
 
         li.setAttribute("class", "product");
+        li.setAttribute("id", produkts[i].id);
         title.setAttribute("class", "product-title");
-       // description.setAttribute("class", "product-description");
         categorys.setAttribute("class", "product-category");
         price.setAttribute("class", "product-price");
         img.setAttribute("class", "product-image");
@@ -67,5 +68,18 @@ function presentResult(produkts){
         
     }
     
+}
+
+function redirect(data){
+    if(window.location.href == "http://localhost:5500/searchResult.html"){
+        presentResult(data);
+        console.log("rätt");
+
+    }else{
+        window.location.href = "http://localhost:5500/searchResult.html";
+        presentResult(data);
+        console.log("fel");
+    }
+
 }
 
