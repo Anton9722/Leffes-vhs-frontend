@@ -21,13 +21,13 @@ export function search(input,apiKey) {
             }))
             .then(data => {         
                 if (!data.length == 0) {
-                    localStorage.setItem("results", JSON.stringify(data));
+                    sessionStorage.setItem("results", JSON.stringify(data));
                     if (window.location.href !== "http://localhost:5500/searchResult.html") {
                         window.location.href = "http://localhost:5500/searchResult.html";
                     }
                     
                 }
-                let results = JSON.parse( localStorage.getItem("results"));
+                let results = JSON.parse( sessionStorage.getItem("results"));
                 console.log(results);
                  presentResult(results);
             })
@@ -36,7 +36,7 @@ export function search(input,apiKey) {
     });
 
     if(window.location.href == "http://localhost:5500/searchResult.html"){
-        let results = JSON.parse( localStorage.getItem("results"));
+        let results = JSON.parse( sessionStorage.getItem("results"));
         presentResult(results);
     }
     
