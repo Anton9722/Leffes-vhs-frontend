@@ -36,7 +36,7 @@ export function search(input,apiKey) {
      */
 }
 
-function presentResult(produkts){
+export function presentResult(produkts){
     
     let result = document.getElementById("foundProducts")
     result.innerHTML = '';
