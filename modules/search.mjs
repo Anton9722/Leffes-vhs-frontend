@@ -21,16 +21,24 @@ export function search(input,apiKey) {
             }))
             .then(data => {         
                 if (!data.length == 0) {
+                    sessionStorage.setItem("results", JSON.stringify(data));
                     if (window.location.href !== "http://localhost:5500/searchResult.html") {
                         window.location.href = "http://localhost:5500/searchResult.html";
                     }
-                    presentResult(data);
-
+                    
                 }
+                let results = JSON.parse( sessionStorage.getItem("results"));
+                console.log(results);
+                 presentResult(results);
             })
             input.value = '';
         }
     });
+
+    if(window.location.href == "http://localhost:5500/searchResult.html"){
+        let results = JSON.parse( sessionStorage.getItem("results"));
+        presentResult(results);
+    }
     
 /*     
      */
@@ -70,16 +78,4 @@ function presentResult(produkts){
     
 }
 
-function redirect(data){
-    if(window.location.href == "http://localhost:5500/searchResult.html"){
-        presentResult(data);
-        console.log("rätt");
-
-    }else{
-        window.location.href = "http://localhost:5500/searchResult.html";
-        presentResult(data);
-        console.log("fel");
-    }
-
-}
 
