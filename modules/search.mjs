@@ -78,16 +78,4 @@ function presentResult(produkts){
     
 }
 
-function redirect(data){
-    if(window.location.href == "http://localhost:5500/searchResult.html"){
-        presentResult(data);
-        console.log("rätt");
-
-    }else{
-        window.location.href = "http://localhost:5500/searchResult.html";
-        presentResult(data);
-        console.log("fel");
-    }
-
-}
 
