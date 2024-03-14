@@ -21,11 +21,11 @@
     width: 180px;
     height: 300px;
     background-color: rgba(219, 219, 219, 0.685);
-    border-radius: 10px;
+    border-radius: 5px;
     box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.233);
     margin: 30px;
     position: relative;
-    padding-left: 30px;
+    
     
     
     
@@ -37,6 +37,7 @@
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
+    margin: 0;
 
 }
 .product-price{
@@ -52,10 +53,12 @@
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
 
+
 }
 .product-image{
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    width: 100%;
+    height: 160px;
     
-    width: 140px;
-    height: 140px;
-    border-radius: 10px;
 }
