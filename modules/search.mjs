@@ -71,7 +71,7 @@ function presentResult(produkts){
 
 
 
-        li.append(title,img, categorys, price);
+        li.append(img,title, categorys, price);
         result.appendChild(li);
         
     }
