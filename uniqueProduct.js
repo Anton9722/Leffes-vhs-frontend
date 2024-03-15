@@ -7,39 +7,42 @@ let addToCartBtn = document.getElementById("addToCartBtn");
 addToCartBtn.addEventListener("click", addToCart)
 let uniqueProductPicture = document.getElementById("uniqueProductPicture");
 
+let selectedMovieId = sessionStorage.getItem("sessionStorageId");
 
-function printSelectedUniqueMovie() {
+//************** BYT TILL RIKTIG CART-ARRAY ****************
+let itemsInCart = [];
+//************** BYT TILL RIKTIG CART-ARRAY ****************
 
-    productName.innerText = "Leffes film"; //selectedMovie.name
-    uniqueProductPicture.src = "https://img-cdn.sfanytime.com/COVERM/COVERM_88e88274-ef07-4f35-86f1-b79600b1d36a_sv.jpg?w=375&ar=0.692&fit=crop&fm=pjpg&s=ed93e17f20596aeb0498984357dcaa43"
+
+// *************** BYT TILL RIKTIGT SESSION-ID******************
+sessionStorage.setItem("sessionStorageId", 2)
+// *************** BYT TILL RIKTIGT SESSION-ID******************
 
 
-    //****************************************  GET uniqueProductId istället för 1
-    fetch("http://localhost:8080/api/v1/movie/1", {
+printSelectedUniqueMovie(selectedMovieId);
 
+function printSelectedUniqueMovie(selectedMovieId) {
+    fetch("http://localhost:8080/api/v1/movie/" + selectedMovieId, {
         headers: {
             "api_key": "Leffes_api_nyckel",
             "Content-Type": "application/json"
         }
     })
         .then(res => res.json())
-        .then(data => {
-            data.map(selectedMovie => {
-                console.log("Filmens ID" + selectedMovie.id);
+        .then(foundMovie => {
 
-                productGenre.innerText = selectedMovie.category;
-                productDescription.innerText = selectedMovie.description;
-                productPrice.innerText = selectedMovie.price;
+            console.log("Filmens ID " + foundMovie.id);
 
-
-            })
+            productName.innerText = foundMovie.name;
+            uniqueProductPicture.src = foundMovie.imageUrl;
+            productGenre.innerText = foundMovie.category;
+            productDescription.innerText = foundMovie.description;
+            productPrice.innerText = foundMovie.price;
         })
 }
 
 function addToCart() {
-
-
-
+    itemsInCart.push(selectedMovieId);
+    console.log("Har nu lagt till film med ID " + selectedMovieId + " i kundvagnen");
+    localStorage.setItem("itemsInCart", JSON.stringify(itemsInCart))
 }
-
-printSelectedUniqueMovie();
