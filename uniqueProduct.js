@@ -1,4 +1,7 @@
-let uniqueProduct = document.getElementById("uniqueProduct");
+import { returnToIndex, showCart, findStore } from "./modules/header.mjs";
+import { search } from "./modules/search.mjs";
+
+
 let productName = document.getElementById("productName");
 let productGenre = document.getElementById("productGenre");
 let productDescription = document.getElementById("productDescription");
@@ -9,14 +12,22 @@ let uniqueProductPicture = document.getElementById("uniqueProductPicture");
 
 let selectedMovieId = sessionStorage.getItem("sessionStorageId");
 
-//************** BYT TILL RIKTIG CART-ARRAY ****************
-let itemsInCart = [];
-//************** BYT TILL RIKTIG CART-ARRAY ****************
 
 
 // *************** BYT TILL RIKTIGT SESSION-ID******************
-sessionStorage.setItem("sessionStorageId", 2)
+//sessionStorage.setItem("sessionStorageId", 2)
 // *************** BYT TILL RIKTIGT SESSION-ID******************
+
+const apiKey = new Headers();
+apiKey.append("api_key", "Leffes_api_nyckel");
+
+
+showCart()
+returnToIndex()
+findStore()
+
+search(searchInput, apiKey)
+
 
 
 printSelectedUniqueMovie(selectedMovieId);
@@ -41,8 +52,47 @@ function printSelectedUniqueMovie(selectedMovieId) {
         })
 }
 
+
 function addToCart() {
-    itemsInCart.push(selectedMovieId);
-    console.log("Har nu lagt till film med ID " + selectedMovieId + " i kundvagnen");
-    localStorage.setItem("itemsInCart", JSON.stringify(itemsInCart))
+    if (localStorage.getItem("itemsInCart") === null) {
+        let itemsInCart = [];
+        itemsInCart.push(selectedMovieId);
+        localStorage.setItem("itemsInCart", JSON.stringify(itemsInCart))
+        console.log("ahhhhhh" + itemsInCart);
+    } else {
+        let itemsInCart = JSON.parse(localStorage.getItem("itemsInCart"))
+        console.log("Detta låg i undvagnen innan klicket" + itemsInCart);
+        itemsInCart.push(selectedMovieId);
+        console.log("Nu ligger " + itemsInCart + " i kundvagnen");
+        localStorage.setItem("itemsInCart", JSON.stringify(itemsInCart))
+
+    }
 }
+
+
+
+
+// function addToCart() {
+//     let itemsInCartForReal = JSON.parse(localStorage.getItem("itemsInCartForReal"));
+//     itemsInCartForReal = localStorage.getItem("itemsInCartForReal")
+//     console.log("itemsInCartForReal = " + itemsInCartForReal);
+
+//     if (itemsInCartForReal === null) {
+//         console.log("itemsInCartForReal är jätteNull");
+//         localStorage.setItem("itemsInCartForReal", JSON.stringify(selectedMovieId))
+//         console.log("itemsInCartForReal är " + localStorage.getItem("itemsInCartForReal"));
+//     } else {
+//         console.log("itemsInCartForReal är inte Null utan itemsInCartForReal är: " + localStorage.getItem("itemsInCartForReal"));
+//         itemsInCartForReal.push(selectedMovieId);
+//         localStorage.setItem("itemsInCartForReal", JSON.stringify(itemsInCartForReal))
+
+//     }
+
+
+
+// console.log("Existerar jag" + itemsInCart);
+
+// itemsInCart.push(selectedMovieId);
+// console.log("Har nu lagt till film med ID " + selectedMovieId + " i kundvagnen");
+// localStorage.setItem("itemsInCart", JSON.stringify(itemsInCart))
+//}
