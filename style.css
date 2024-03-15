@@ -37,7 +37,7 @@ body {
 
 #searchInput {
     background-color: white;
-    background-image: url('searchicon.png');
+    /*background-image: url('searchicon.png');*/
     background-position: 10px 10px;
     background-repeat: no-repeat;
     padding-left: 30px;
@@ -141,4 +141,26 @@ body {
 #addToCartBtn {
     margin-left: 40px;
 
+}
+
+#order {
+    margin-top: 100px;
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: rgba(220, 220, 220, 0.82);
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    display: flex;
+    list-style: none;
+    justify-content: center;
+}
+
+#btnDiv {
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: rgba(220, 220, 220, 0.82);
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    display: flex;
+    justify-content: center;
 }
