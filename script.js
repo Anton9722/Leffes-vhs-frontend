@@ -4,6 +4,9 @@ import { popularMovies } from "./modules/index.mjs";
 
 import { returnToIndex, showCart, findStore, showVhsPlayers } from "./modules/header.mjs";
 
+
+
+
 returnToIndex()
 showCart()
 findStore()
