@@ -16,11 +16,21 @@ export function popularMovies(apiKey) {
       })
     )
     .then((data) => {
-      const firstFive = data.slice(0, 6);
+      let randomData = shuffleArray(data);
+      let firstFive = randomData.slice(0, 6);
       console.log(firstFive);
 
-      if (window.location.href == "http://localhost:5500/index.html") {
+      
+      if (window.location.href == "http://127.0.0.1:5500/index.html") {
         presentResult(firstFive);
       }
     });
+}
+
+function shuffleArray(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
 }
