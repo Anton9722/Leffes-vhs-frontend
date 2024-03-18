@@ -21,5 +21,4 @@ search(searchInput, apiKey);
 popularMovies(apiKey);
 
 
-heroSection.appendChild(bosse);
 
