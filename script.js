@@ -1,9 +1,9 @@
 import { search } from "./modules/search.mjs";
-
+//import{categorySearch}from "./modules/categories.mjs"
 import {popularMovies} from "./modules/index.mjs";
-
-import { addToCart } from "./modules/addToCart.mjs";
 import { returnToIndex, showCart, findStore } from "./modules/header.mjs";
+
+
 
 returnToIndex()
 showCart()

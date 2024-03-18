@@ -20,6 +20,7 @@
 
     <title>Leffes vhs</title>
     <script src="script.js" type="module" ></script>
+    <script src="modules/categories.mjs" type="module"></script>
 
 </head>
 
@@ -34,7 +35,19 @@
     </div>
     <div id="header2">
         <ul id="headerUl">
-            <li class="header2Li">VHS-FILMER</li>
+            <li id="dropdown" class="header2Li">VHS-FILMER
+                <div class="dropdown-content">
+                    <a class="category-btn" id="action-btn" href="">Action</a>
+                    <a class="category-btn" id="thriller-btn" href="">Thriller</a>
+                    <a class="category-btn" id="scienceFiction-btn" href="">Science Fiction</a>
+                    <a class="category-btn" id="drama-btn" href="">Drama</a>
+                    <a class="category-btn" id="adventure-btn" href="">Äventyr</a>
+                    <a class="category-btn" id="family-btn" href="">Familj</a>
+                    <a class="category-btn" id="war-btn" href="">Krig</a>
+                    <a class="category-btn" id="comedy-btn" href="">Komedi</a>
+                    <a class="category-btn" id="horror-btn" href="">Skräck</a>
+                </div>
+            </li>
             <li class="header2Li">VHS-SPELARE</li>
             <li class="header2Li">TILLBEHÖR</li>
             <li class="header2Li">ERBJUDANDEN</li>
