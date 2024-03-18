@@ -87,15 +87,7 @@ body {
     margin-left: 40px;
 }
 
-#popularMovies {
-    text-indent: 40px;
-    background-color: rgba(219, 219, 219, 0.65);
-    position: fixed;
-    bottom: 0;
-    width: 100%;
-    border-top-left-radius: 30px;
-    border-top-right-radius: 30px;
-}
+
 
 .header2Li {
     color: rgb(220, 220, 220);

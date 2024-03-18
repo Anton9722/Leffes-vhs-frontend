@@ -17,7 +17,7 @@ export function popularMovies(apiKey) {
     )
     .then((data) => {
       let randomData = shuffleArray(data);
-      let firstFive = randomData.slice(0, 6);
+      let firstFive = randomData.slice(0, 7);
       console.log(firstFive);
 
       
