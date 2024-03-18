@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="searchResult.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
@@ -17,9 +16,7 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet">
-    <script src="cart.js" type="module"></script>
-    <script src="https://js.stripe.com/v3/"></script>
-
+    <script src="uniquePlayerPage.js" type="module"></script>
 </head>
 
 <body>
@@ -31,6 +28,7 @@
         <button class="headerBtn" id="loginBtn"><i class="fa-regular fa-user"></i> Logga in</button>
         <button class="headerBtn" id="cartBtn"><i class="fa-solid fa-cart-shopping"></i> Kundvagn</button>
     </div>
+
     <div id="header2">
         <ul id="headerUl">
             <li class="header2Li" id="vhsMoviesBtn">VHS-FILMER</li>
@@ -40,18 +38,19 @@
         </ul>
     </div>
 
-
-
-    <div id="order">
-
-        <ul id="foundProducts">
-
-        </ul>
+    <div id="uniqueProduct">
+        <img id="uniqueProductPicture" src="" alt="">
+        <div id="productInformation">
+            <h2 id="productName"> movie name</h2>
+            <p id="productDescription">description. Karl "Kalle" Magnus Anka[1] (engelska: Donald Fauntleroy Duck),
+                vardagligen bara Kalle Anka (info) (Donald Duck), är ursprungligen en filmfigur skapad av Walt Disneys
+                animatörer. Hans första officiella framträdande var den 9 juni 1934 i kortfilmen Den kloka hönan[2] (The
+                Wise Little Hen)</p>
+            <p id="productPrice">price</p>
+            <button id="addToCartBtn"> add to cart</button>
+        </div>
     </div>
-    <div id=btnDiv>
-        <h3 id="price"></h3>
-        <button id="buyBtn">KÖP NU</button>
-    </div>
+
 
 </body>
 

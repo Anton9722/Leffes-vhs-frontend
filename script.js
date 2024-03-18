@@ -1,13 +1,13 @@
 import { search } from "./modules/search.mjs";
 
-import {popularMovies} from "./modules/index.mjs";
+import { popularMovies } from "./modules/index.mjs";
 
-import { addToCart } from "./modules/addToCart.mjs";
-import { returnToIndex, showCart, findStore } from "./modules/header.mjs";
+import { returnToIndex, showCart, findStore, showVhsPlayers } from "./modules/header.mjs";
 
 returnToIndex()
 showCart()
 findStore()
+showVhsPlayers()
 
 
 

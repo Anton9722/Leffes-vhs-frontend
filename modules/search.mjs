@@ -1,7 +1,6 @@
 
 export function search(input, apiKey) {
 
-
     input.addEventListener('keypress', (event) => {
         if (event.key === 'Enter' && input.value != '') {
 
@@ -17,16 +16,14 @@ export function search(input, apiKey) {
                     errMessage.innerText = "Inget resultat";
                     foundProducts.appendChild(errMessage);
 
-
                 }))
                 .then(data => {
-                    
-                        sessionStorage.setItem("results", JSON.stringify(data));
-                        if (window.location.href !== "http://localhost:5500/searchResult.html") {
-                            window.location.href = "http://localhost:5500/searchResult.html";
-                        }
 
-                    
+                    sessionStorage.setItem("results", JSON.stringify(data));
+                    if (window.location.href !== "http://localhost:5500/searchResult.html") {
+                        window.location.href = "http://localhost:5500/searchResult.html";
+                    }
+
                     let results = JSON.parse(sessionStorage.getItem("results"));
                     console.log(results);
                     presentResult(results);
@@ -36,30 +33,21 @@ export function search(input, apiKey) {
     });
 
     if (window.location.href == "http://localhost:5500/searchResult.html") {
-        try{
-        let results = JSON.parse(sessionStorage.getItem("results"));
-        presentResult(results);
-        }catch(err){
+        try {
+            let results = JSON.parse(sessionStorage.getItem("results"));
+            presentResult(results);
+        } catch (err) {
             let foundProducts = document.getElementById("foundProducts")
             foundProducts.innerHTML = "";
             let errMessage = document.createElement("li")
             errMessage.innerText = "Inget resultat";
             foundProducts.appendChild(errMessage);
-            
         }
-
-        
     }
-
-
 }
 
 
-export function presentResult(products){
-    
-
-  
-
+export function presentResult(products) {
     let result = document.getElementById("foundProducts")
     result.innerHTML = '';
     for (let i in products) {
