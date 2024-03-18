@@ -56,35 +56,44 @@ moviesToBuy.forEach(element => {
 let stripe = Stripe("pk_test_51OlqHVKQ2XHNRrsT7XkQ8t3bbWfzbfoOT66XnL6sAWEo1Az2V7y4xQuu9WTEZjbVuiFw7n31x6L3qoyH7I0geWAO00Jy3qJEIM");
 
 buyBtn.addEventListener("click", function () {
+    console.log("Tjabba");
 
-    let moviesToBuy = [];
+    let moviesToStripe = [];
     let fetchCounter = 0;
+
+    console.log(moviesToBuy + "Bråkar jag?");
 
     for (let i = 0; i < moviesToBuy.length; i++) {
         const headers = new Headers();
         headers.append("api_key", "Leffes_api_nyckel");
+        console.log("Tjoooo");
         fetch("http://localhost:8080/api/v1/movie/" + moviesToBuy[i], {
             headers: headers
+
         })
             .then(res => res.json())
             .then(data => {
-
-                moviesToBuy.push({
+                console.log(data + "tjooooohae");
+                console.log("hdkjash" + data.stripeId);
+                moviesToStripe.push({
                     price: data.stripeId,
+
                     quantity: 1,
                 });
+                console.log("wööööö" + moviesToStripe);
 
                 fetchCounter++;
 
                 console.log(moviesToBuy);
 
-                if (fetchCounter === moviesToBuy.length) {
+                if (fetchCounter === moviesToStripe.length) {
 
                     stripe.redirectToCheckout({
-                        lineItems: moviesToBuy,
+                        lineItems: moviesToStripe,
                         mode: "payment",
-                        successUrl: "https://www.google.com/",
-                        cancelUrl: "https://www.google.com/",
+                        successUrl: "http://localhost:5500/",
+                        cancelUrl: "http://localhost:5500/",
+
                     })
                         .then(result => {
                             console.log(result);
@@ -94,7 +103,7 @@ buyBtn.addEventListener("click", function () {
 
             })
             .catch(error => {
-                console.log(error);
+                console.log("är jag felet? " + error);
             });
     }
 });
