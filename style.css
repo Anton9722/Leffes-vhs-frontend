@@ -26,6 +26,7 @@ body {
     margin-right: 250px;
     color: rgba(254, 254, 254, 1);
     text-shadow: 3px 3px 3px #C04B1B;
+    cursor: pointer;
 }
 
 #headerUl {
@@ -37,7 +38,7 @@ body {
 
 #searchInput {
     background-color: white;
-    background-image: url('searchicon.png');
+    /*background-image: url('searchicon.png');*/
     background-position: 10px 10px;
     background-repeat: no-repeat;
     padding-left: 30px;
@@ -57,8 +58,26 @@ body {
     background-color: rgba(219, 219, 219, 0.0);
     color: white;
     text-shadow: 3px 3px 3px black;
+    transition-duration: 0.4s;
 
 }
+
+.headerBtn:hover {
+    color: rgb(228, 194, 120);
+    cursor: pointer;
+}
+
+#loginBtn {
+    cursor: not-allowed;
+
+}
+
+#loginBtn:hover {
+    cursor: not-allowed;
+    color: white;
+
+}
+
 
 #heroSection h1,
 #heroSection h2 {
@@ -140,5 +159,31 @@ body {
 
 #addToCartBtn {
     margin-left: 40px;
+    cursor: pointer;
+}
 
+#order {
+    margin-top: 100px;
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: rgba(220, 220, 220, 0.82);
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    display: flex;
+    list-style: none;
+    justify-content: center;
+}
+
+#btnDiv {
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: rgba(220, 220, 220, 0.82);
+    border-bottom-left-radius: 30px;
+    border-bottom-right-radius: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+#buyBtn {
+    cursor: pointer;
 }
