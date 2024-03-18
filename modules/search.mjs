@@ -43,8 +43,8 @@ export function search(input, apiKey) {
 
 }
 
- Show-popular-products
-export function presentResult(produkts){
+
+export function presentResult(products){
     
 
   
