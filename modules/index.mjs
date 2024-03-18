@@ -21,7 +21,7 @@ export function popularMovies(apiKey) {
       console.log(firstFive);
 
       
-      if (window.location.href == "http://127.0.0.1:5500/index.html") {
+      if (window.location.href == "http://localhost:5500/index.html") {
         presentResult(firstFive);
       }
     });
