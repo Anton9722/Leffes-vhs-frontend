@@ -43,7 +43,11 @@ export function search(input, apiKey) {
 
 }
 
-function presentResult(products) {
+ Show-popular-products
+export function presentResult(produkts){
+    
+
+  
 
     let result = document.getElementById("foundProducts")
     result.innerHTML = '';
