@@ -20,13 +20,13 @@ export function search(input, apiKey) {
 
                 }))
                 .then(data => {
-                    if (!data.length == 0) {
+                    
                         sessionStorage.setItem("results", JSON.stringify(data));
                         if (window.location.href !== "http://localhost:5500/searchResult.html") {
                             window.location.href = "http://localhost:5500/searchResult.html";
                         }
 
-                    }
+                    
                     let results = JSON.parse(sessionStorage.getItem("results"));
                     console.log(results);
                     presentResult(results);
@@ -36,8 +36,19 @@ export function search(input, apiKey) {
     });
 
     if (window.location.href == "http://localhost:5500/searchResult.html") {
+        try{
         let results = JSON.parse(sessionStorage.getItem("results"));
         presentResult(results);
+        }catch(err){
+            let foundProducts = document.getElementById("foundProducts")
+            foundProducts.innerHTML = "";
+            let errMessage = document.createElement("li")
+            errMessage.innerText = "Inget resultat";
+            foundProducts.appendChild(errMessage);
+            
+        }
+
+        
     }
 
 
