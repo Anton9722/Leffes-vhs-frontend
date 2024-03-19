@@ -238,4 +238,10 @@ body {
 
 #dropdown:hover .dropdown-content {display: block;}
 
+#foundProducts{
+    display: flex;
+    justify-content: center;
+    align-items: space-between;
+}
+
 
