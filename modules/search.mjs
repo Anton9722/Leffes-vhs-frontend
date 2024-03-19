@@ -128,9 +128,10 @@ export function presentResult(products){
 
         li.append(img, title, categorys, price);
         result.appendChild(li);
-
+        
     }
-
+    
+    console.log(products)
 }
 
 

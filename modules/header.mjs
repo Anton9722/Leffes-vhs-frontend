@@ -34,11 +34,13 @@ export function showVhsPlayers() {
             .then(response => response.json())
             .then(data => {
 
-                sessionStorage.setItem("VhsPlayersToShow", JSON.stringify(data));
+                sessionStorage.setItem("results", JSON.stringify(data));
+                window.location.href = "http://localhost:5500/searchResult.html";
+                
 
-                let vhsPlayersToShow = JSON.parse(sessionStorage.getItem("VhsPlayersToShow"));
+/*                 let vhsPlayersToShow = JSON.parse(sessionStorage.getItem("VhsPlayersToShow"));
                 console.log(vhsPlayersToShow);
-                presentVhsPlayers(vhsPlayersToShow);
+                presentVhsPlayers(vhsPlayersToShow); */
             })
     })
 }
