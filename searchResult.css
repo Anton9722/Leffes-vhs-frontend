@@ -31,13 +31,14 @@
 }
 
 .product-title {
-    width: 80%;
+    width: 100%;
     height: 45px;
     overflow: hidden;
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     margin: 0;
+    text-align: center;
 
 }
 
@@ -45,7 +46,8 @@
     font-weight: bold;
     position: absolute;
     bottom: 0;
-    padding-left: 40px;
+    text-align: center;
+    width: 100%;
 }
 
 .product-category {
@@ -54,7 +56,17 @@
     display: -webkit-box;
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
+    text-align: center;
 
+}
+
+.product-information {
+    font-size: small;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    text-align: center;
 
 }
 
@@ -63,5 +75,5 @@
     border-top-right-radius: 5px;
     width: 100%;
     height: 220px;
-    
+
 }

@@ -1,7 +1,6 @@
 
 export function search(input, apiKey) {
 
-
     input.addEventListener('keypress', (event) => {
         if (event.key === 'Enter' && input.value != '') {
             let results = []
@@ -13,13 +12,13 @@ export function search(input, apiKey) {
                 headers: apiKey,
                 "Content-Type": "application/json"
             })
+
             .then(response => response.json().catch(err => {
                 let foundProducts = document.getElementById("foundProducts")
                 foundProducts.innerHTML = "";
                 let errMessage = document.createElement("li")
                 errMessage.innerText = "Inget resultat";
                 foundProducts.appendChild(errMessage);
-
 
             }))
             .then(data => {
@@ -28,6 +27,7 @@ export function search(input, apiKey) {
                     if (window.location.href !== "http://localhost:5500/searchResult.html") {
                         window.location.href = "http://localhost:5500/searchResult.html";
                     }
+
 
                 
                 let results = JSON.parse(sessionStorage.getItem("results"));
@@ -38,22 +38,17 @@ export function search(input, apiKey) {
     });
 
     if (window.location.href == "http://localhost:5500/searchResult.html") {
-        try{
-        let results = JSON.parse(sessionStorage.getItem("results"));
-        presentResult(results);
-        }catch(err){
+        try {
+            let results = JSON.parse(sessionStorage.getItem("results"));
+            presentResult(results);
+        } catch (err) {
             let foundProducts = document.getElementById("foundProducts")
             foundProducts.innerHTML = "";
             let errMessage = document.createElement("li")
             errMessage.innerText = "Inget resultat";
             foundProducts.appendChild(errMessage);
-            
         }
-
-        
     }
-
-
 }
 
 function categorySearch(input, apiKey) {
@@ -68,6 +63,7 @@ function categorySearch(input, apiKey) {
             let errMessage = document.createElement("li")
             errMessage.innerText = "Inget resultat";
             foundProducts.appendChild(errMessage);
+
 
 
         }))
@@ -100,6 +96,7 @@ function categorySearch(input, apiKey) {
 
 
 export function presentResult(products){
+
 
     let result = document.getElementById("foundProducts")
     result.innerHTML = '';

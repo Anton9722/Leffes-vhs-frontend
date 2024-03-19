@@ -94,6 +94,23 @@ body {
     text-shadow: 3px 3px 3px black;
 }
 
+#vhsMoviesBtn {
+    cursor: pointer;
+}
+
+
+#vhsPlayerBtn {
+    cursor: pointer;
+}
+
+#accessoriesBtn {
+    cursor: not-allowed;
+}
+
+#offersBtn {
+    cursor: not-allowed;
+}
+
 #uniqueProduct {
     background-color: rgba(219, 219, 219, 0.65);
     position: absolute;
@@ -120,16 +137,15 @@ body {
 
 #productName {
     margin: 0px;
-    padding-left: 40px;
 }
 
 #productGenre {
     margin: 0px;
-    padding-left: 80px;
+
     font-size: 80%;
     font-weight: bold;
     opacity: 50%;
-    text-align: left;
+    text-align: center;
 }
 
 #productDescription {
@@ -190,10 +206,10 @@ body {
 }
 
 #buyBtn:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
-#price{
+#price {
     color: green;
 }
 .dropdown-content {
